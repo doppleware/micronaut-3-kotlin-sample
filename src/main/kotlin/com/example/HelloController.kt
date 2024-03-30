@@ -17,6 +17,6 @@ open class HelloController {
 
     @NewSpan
     open fun hi():String{
-        return "Hello"
+        return FinalClass().test();
     }
 }
