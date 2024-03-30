@@ -8,6 +8,10 @@ datasources:
     password: ''
     driver-class-name: io.opentelemetry.instrumentation.jdbc.OpenTelemetryDriver
 
+kafka:
+  bootstrap:
+    servers: localhost:9092
+
 otel:
   traces:
     exporter: otlp

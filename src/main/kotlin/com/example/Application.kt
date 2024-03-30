@@ -1,16 +1,23 @@
 package com.example
 
-import io.micronaut.context.annotation.Factory
-import io.micronaut.context.event.BeanCreatedEvent
-import io.micronaut.context.event.BeanCreatedEventListener
-import io.micronaut.jdbc.DataSourceResolver
+import io.micronaut.context.ApplicationContext
+import io.micronaut.context.event.ApplicationEventListener
+import io.micronaut.context.event.StartupEvent
 import io.micronaut.runtime.Micronaut.run
-import io.opentelemetry.api.OpenTelemetry
-import io.opentelemetry.instrumentation.jdbc.datasource.OpenTelemetryDataSource
 import jakarta.inject.Singleton
 
+
 fun main(args: Array<String>) {
-	run(*args)
+	val context=run(*args)
+	val client: Producer = context.getBean(Producer::class.java)
+	client.sendProduct("Nike", "Blue Trainers")
+}
+
+
+@Singleton
+fun produceStuff(context: ApplicationContext){
+	val client: Producer = context.getBean(Producer::class.java)
+	client.sendProduct("Nike", "Blue Trainers")
 }
 
 //@Factory

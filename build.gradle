@@ -25,6 +25,8 @@ dependencies {
     implementation("io.opentelemetry:opentelemetry-exporter-otlp")
     implementation("io.opentelemetry.instrumentation:opentelemetry-jdbc")
     implementation("io.micronaut.tracing:micronaut-tracing-opentelemetry-http")
+    implementation("io.micronaut.kafka:micronaut-kafka")
+    implementation("io.micronaut.tracing:micronaut-tracing-opentelemetry-kafka")
 
     implementation("jakarta.annotation:jakarta.annotation-api")
     implementation("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")

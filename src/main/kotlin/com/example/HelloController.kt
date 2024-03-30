@@ -1,5 +1,7 @@
 package com.example
 
+import io.micronaut.configuration.kafka.annotation.KafkaClient
+import io.micronaut.configuration.kafka.annotation.Topic
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Get
 import io.micronaut.scheduling.TaskExecutors
@@ -20,3 +22,4 @@ open class HelloController {
         return FinalClass().test();
     }
 }
+
